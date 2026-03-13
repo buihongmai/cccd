@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Kiểm tra Số CMND</title>
+</head>
+
+<body>
+
+<p>Nhập số chứng minh nhân dân:</p>
+
+<input id="cmnd">
+<button onclick="kiemtra()">Kiểm tra</button>
+
+<p id="kq"></p>
+
+<script>
+
+function kiemtra(){
+
+let cmnd = document.getElementById("cmnd").value
+
+let chiSo = /^\d+$/.test(cmnd)
+let doDai = cmnd.length >= 9 && cmnd.length <= 11
+
+if(chiSo && doDai){
+document.getElementById("kq").innerText="SCMND hợp lệ"
+}
+else{
+document.getElementById("kq").innerText="SCMND không hợp lệ"
+}
+
+}
+
+</script>
+
+</body>
+</html>
